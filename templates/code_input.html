@@ -8,8 +8,15 @@
 
 {% block content %}
 
+<style>
+    .code_box{
+        min-height: calc({{ num_lines }}em * 1.5 + 2 * 1em);
+        min-width: calc({{ max_chars }}ch + 4 * 2em);
+    }
+</style>
+
 <form>
-    <textarea name="code" id="code" placeholder="Paste Your Code Here">{{ code }}
+    <textarea class="code_box" name="code" placeholder="Paste Your Code Here">{{ code }}
     </textarea>
 
 

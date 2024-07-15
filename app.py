@@ -9,9 +9,12 @@ PLACEHOLDER_CODE =  "print('Hello, World!')"
 def context():
     if session.get("code") is None:
         session["code"] = PLACEHOLDER_CODE
+    lines = session["code"].split("\n")
     return {
         "message" : "Paste Your Python Code Here 🐍",
         "code" : session["code"],
+        "num_lines" : len(lines),
+        "max_chars" : len(max(lines, key=len)),
     }
 
 
